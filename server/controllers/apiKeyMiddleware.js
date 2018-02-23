@@ -3,7 +3,6 @@
  * @module controllers/apiKeyMiddleware
 */
 
-const apiKeyManager = require('../utils/apiKeyManager');
 const decryptor = require('../utils/decryptor');
 const validator = require('../utils/validator');
 const constants = require('../utils/constants');
@@ -23,8 +22,9 @@ module.exports = function (req, res, next){
     return res.status(401).json({
       data: constants.messages.error.NO_ACCESS_TO_API_KEY 
     });
-
+    console.log(0);
   let userData = decryptor(api_key, constants.encryptation.API_KEY_ENCRYPTATION);
+  console.log(userData.id);
   database.api_user.findById(userData.id)
     .then(apiUser => {
       if (!apiUser)

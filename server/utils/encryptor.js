@@ -3,6 +3,7 @@
  * @module utils/encryptor
  */
 const crypto = require('crypto-js');
+const logger = require('../../tools/logger');
 
 /**
  * Encrypt a decrypted data
@@ -16,9 +17,10 @@ const crypto = require('crypto-js');
 module.exports = (decryptedData, key) => {
   try {
     if(!decryptedData) return -1;
-    let encryptedData = crypto.AES.encrypt(decryptedData.toString(), key).toString();
+    let encryptedData = crypto.AES.encrypt(JSON.stringify(decryptedData), key).toString();
     return encryptedData;  
   } catch (err){
-    return err;
+    logger.error(err);
+    return -1;
   }   
 };

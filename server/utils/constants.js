@@ -13,6 +13,7 @@ module.exports = {
       INVALID_EMAIL: 'Your email must be in the format user@provider.region',
       INVALID_PASSWORD: 'Password must have at least 6 characters.',
       INVALID_NAME: 'You must send a name to sign up.',
+      INVALID_SOURCE: 'You must send a source to sign up.',
       USER_EXISTS: 'This email was taken by another user.',
       INVALID_USER: 'The username or password you are logging in does not correspond to a valid user.',
       NO_ACCESS_TO_API_KEY: 'You need a valid API key to access this feature.',

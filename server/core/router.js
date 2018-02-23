@@ -5,7 +5,9 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 const auth = require('../controllers/auth/router');
+const middleware = require('../controllers/apiKeyMiddleware');
 
+router.use(middleware);
 router.use('/auth', auth);
 
 router.get('/', (req, res) => {
