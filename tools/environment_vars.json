@@ -1,0 +1,11 @@
+{
+  "development":{
+    "NODE_ENV": "development",
+    "PORT": 3105,
+    "HOST": "http://localhost:3105"
+  },
+  "production":{
+    "NODE_ENV": "production",
+    "PORT": 3105
+  }
+}
