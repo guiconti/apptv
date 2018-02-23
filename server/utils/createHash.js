@@ -19,7 +19,8 @@ module.exports = (decryptedData, key) => {
   try {
     if(!decryptedData || !key) return -1;
     let hashedData = crypto.HmacSHA256(decryptedData, key);
-    return hashedData;  
+    let hashedDataInBase64 = crypto.enc.Base64.stringify(hashedData);
+    return hashedDataInBase64;  
   } catch (err){
     logger.error(err);
     return -1;
