@@ -31,6 +31,7 @@ module.exports = {
     EMAIL: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
   },
   encryptation: {
+    API_KEY_ENCRYPTATION: process.env.API_KEY_ENCRYPTATION,
     PASSWORD_HASH_KEY: process.env.PASSWORD_HASH_KEY,
     USER_DATA_ENCRYPTATION: process.env.USER_DATA_ENCRYPTATION,
     TOKEN_ENCRYPTATION: process.env.TOKEN_ENCRYPTATION
