@@ -22,6 +22,6 @@ module.exports = (decryptedData, key) => {
     return hashedData;  
   } catch (err){
     logger.error(err);
-    return err;
+    return -1;
   }   
 };

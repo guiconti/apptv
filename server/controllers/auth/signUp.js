@@ -5,10 +5,10 @@
 
 const logger = require('../../../tools/logger');
 const database = require('../../models/database');
-const validator = require('../utils/validator');
+const validator = require('../../utils/validator');
 const createHash = require('../../utils/createHash');
-const tokenManager = require('../utils/tokenManager');
-const constants = require('../utils/constants');
+const tokenManager = require('../../utils/tokenManager');
+const constants = require('../../utils/constants');
 
 /**
  * Create a new user API
@@ -39,7 +39,7 @@ module.exports = (req, res) => {
   let userInfo = {
     username: username.trim().toLowerCase(),
     email: email.trim().toLowerCase(),
-    password: encryptation.passwordEncrypt(password)
+    password: createHash(password, constants.encryptation.PASSWORD_HASH_KEY)
   };
 
   if (userInfo.password == -1) 
