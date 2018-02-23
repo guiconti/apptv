@@ -52,7 +52,7 @@ module.exports = (req, res) => {
     .then(createdUser => {
       //  Create token
       let userData = {
-        username: createdUser.username,
+        email: createdUser.email,
         id: createdUser.id
       };
       let token = generateToken(userData);
